@@ -1,4 +1,4 @@
-import axios from "axios";
+import api from '../../services/api';
 
 const loginStart = () => ({
   type: "LOGIN_START",
@@ -23,7 +23,7 @@ const logout = () => ({
 export const login = async (user, dispatch) => {
   dispatch(loginStart());
   try {
-    const res = await axios.post("/login", user);
+    const res = await api.post("/login", user);
     res.data.isAdmin && dispatch(loginSuccess(res.data));
   } catch (err) {
     dispatch(loginFailure());

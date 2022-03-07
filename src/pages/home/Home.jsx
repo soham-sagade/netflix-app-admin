@@ -5,7 +5,7 @@ import { userData } from "../../dummyData";
 import WidgetSm from "../../components/widgetSm/WidgetSm";
 import WidgetLg from "../../components/widgetLg/WidgetLg";
 import { useEffect, useMemo, useState } from "react";
-import axios from "axios";
+import api from '../../services/api';
 
 export default function Home() {
   const MONTHS = useMemo(
@@ -31,7 +31,7 @@ export default function Home() {
   // useEffect(() => {
   //   const getStats = async () => {
   //     try {
-  //       const res = await axios.get("/users/stats", {
+  //       const res = await api.get("/users/stats", {
   //         headers: {
   //           token:
   //             `Bearer ${JSON.parse(localStorage.getItem('user')).authToken}`,
